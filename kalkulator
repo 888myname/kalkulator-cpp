@@ -1,0 +1,290 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <ctime>
+#include <windows.h>
+
+using namespace std;
+time_t waktu1 = time(0);
+string waktu = ctime(&waktu1);
+
+class Kalkulator{
+    public:
+        double pertama;
+        double kedua;
+        double hasil;
+        Kalkulator(double pertama,double kedua){
+            Kalkulator::pertama = pertama;
+            Kalkulator::kedua = kedua;
+        }
+        int pertambahan(Kalkulator){
+            hasil = pertama + kedua;
+            return hasil;
+        }
+        int pengurangan(Kalkulator){
+            hasil = pertama - kedua;
+            return hasil;
+        }
+        int perkalian(Kalkulator){
+            hasil = pertama * kedua;
+            return hasil;
+        }
+        int pembagian(Kalkulator){
+            hasil = pertama / kedua;
+            return hasil;
+        }
+        void Melihat(){
+            cout << "hasil dari "<< pertama << " dan " << kedua <<" adalah "<< hasil << endl;
+        }
+};
+
+class Informasi{
+    public:
+    void informasi(){
+        cout << "------------------------------------------------------------------" << endl;
+        cout << "nama program            : program.01.50.(console application).beta" << endl;
+        cout << "diprogram oleh          : bayu aji nugroho"<< endl;
+        cout << "diprogram dengan bahasa : c++" << endl;
+        cout << "tanggal pembuatan       : 2-4/11/2021" << endl;
+        cout << "sandi                   : 140606" << endl;
+        cout << "------------------------------------------------------------------" << endl;
+    }
+};
+
+class Suhu{
+    public:
+        double a;
+        Suhu(double a){
+            Suhu::a = a;
+        }
+        void konversi(Suhu){
+            int angka;
+            suhu1:
+            system("cls");
+            cout << "1 celcius" << endl;
+            cout << "2 fahrenheit" << endl;
+            cout << "3 reamur" << endl;
+            cout << "4 kelvin" << endl;
+            cin >> angka;
+            double hasilsuhu;
+            if(angka == 1){
+                int pilih;
+                cout << "1.celcius -> reamur" << endl;
+                cout << "2.celcius -> fahrenheit" << endl;
+                cout << "3.celcius -> kelvin" << endl;
+                cin >> pilih;
+                if(pilih == 1){
+                    cout << "celcius -> reamur" << endl;
+                    hasilsuhu = a*4/5;
+                    cout << "--------------------------------------------" << endl;
+                    cout << a << " celcius -> " << hasilsuhu << " reamur " << endl;
+                    cout << "--------------------------------------------" << endl;
+                    cout << "rumus : c = reamur x 4/5" << endl;
+                    
+                }else if(pilih == 2){
+                    cout << "celcius -> fahrenheit" << endl;
+                    hasilsuhu = 1.8 * a + 32;
+                    cout << "----------------------------------------------" << endl;
+                    cout << a << " celcius -> " << hasilsuhu << " fahrenheit " << endl;
+                    cout << "----------------------------------------------" << endl;
+                    cout << "rumur : c = 1.8 x fahrenheit + 32" << endl;
+    
+                }else if(pilih == 3){
+                    cout << "celcius -> kelvin" << endl;
+                    hasilsuhu = a + 273.15;
+                    cout << "--------------------------------------------" << endl;
+                    cout << a << " celcius -> " << hasilsuhu << " kelvin " << endl;
+                    cout << "--------------------------------------------" << endl;
+                    cout << "rumus : c = kelvin + 273.15" << endl;
+                    
+
+                }else{
+                    cout << "ketik 1-3" << endl;
+                }
+            }else if(angka == 2){
+                int pilih;
+                cout << "1.fahrenheit -> celcius" << endl;
+                cout << "2.fahrenheit -> reamur" << endl;
+                cout << "3.fahrenheit -> kelvin" << endl;
+                cin >> pilih;
+                if(pilih == 1){
+                    cout << "fahrenheit -> celcius" << endl;
+                    hasilsuhu = (a-32)*0.555555556;
+                    cout << "------------------------------------------------" << endl;
+                    cout << a << " fahrenheit -> " << hasilsuhu << " celcius " << endl;
+                    cout << "------------------------------------------------" << endl;
+                    cout << "rumus f = (c-32) x 5/9" << endl;
+                }else if(pilih == 2){
+                    cout << " fahrenheit -> reamur" << endl;
+                    hasilsuhu = (a-32)*4/9;
+                    cout << "------------------------------------------------" << endl;
+                    cout << a << " fahrenheit -> " << hasilsuhu << " reamur  " << endl;
+                    cout << "------------------------------------------------" << endl;
+                    cout << "rumus f = (re -32) x 4/9" << endl;
+
+                }else if(pilih == 3){
+                    cout << "fahrenheit ke kelvin" <<endl;
+                    hasilsuhu = (a-32)*5/9+273.15;
+                    cout << "------------------------------------------------" << endl;
+                    cout << a << " fahrenheit -> " << hasilsuhu << " kelvin  " << endl;
+                    cout << "------------------------------------------------" << endl;
+                    cout << "rumus f = (re -32) x 4/9 + 273.15" << endl;
+                }else {
+                    cout << "pilih 1-3" << endl;
+                }
+            }else if(angka == 3){
+                cout << "1.reamur -> celcius" << endl;
+                cout << "2.reamur -> fahrenheit" << endl;
+                cout << "3.reamur -> kelvin" << endl;
+            }else if(angka == 4){
+                cout << "1.kelvin -> celcius" << endl;
+                cout << "2.kelvin -> fahrenheit" << endl;
+                cout << "3.kelvin -> reamur" << endl;
+            }
+
+        }
+};
+
+class Main{
+    public:
+    void fungsi(double b,double c){
+        double a;
+        Kalkulator data1 = Kalkulator(b,c);
+        cout << "1.penambahan" << endl;
+        cout << "2.perkurangan" << endl;
+        cout << "3.perkalian" << endl;
+        cout << "4.pembagian"<< endl;
+        cin >> a;
+        if (a==1){
+            data1.pertambahan(data1);
+            data1.Melihat();
+        }else if(a == 2){
+            data1.pengurangan(data1);
+            data1.Melihat();
+        }else if(a == 3){
+            data1.perkalian(data1);
+            data1.Melihat();
+        }else if(a == 4){
+            data1.pembagian(data1);
+            data1.Melihat();
+        }else {
+            cout << "ketik 1-5 !" << endl;
+        }
+
+    }
+};
+string nama;
+class Menu{
+    public:
+        int masuk;
+        Main data0;
+        Informasi user;
+        
+        void menu(){
+            int a,b;
+            int h;
+            ulang:
+            cout << "tekan sekali lagi" << endl;
+            cin >> h;
+            cout << "--------" << endl;
+            system ("cls");
+            cout << "program ini di buka pada : " << waktu<< endl;
+            cout << "hai " << nama << " selamat datang " << endl;
+            cout << "silakan pilih salah satu" << endl;
+            cout << "1.perhitungan(+-x/)" << endl;
+            cout << "2.suhu" << endl;
+            cout << "3.jarak" << endl;
+            cout << "4.informasi program" << endl;
+            cout << "ketik alt + c untuk keluar" << endl;
+            
+            cin >> masuk;
+            if(masuk == 1){
+                
+                int c,d;
+                cout << " masukan angka(harus angka)" << endl;
+                cin >> a;
+                cin >> b;
+                data0.fungsi(a,b);
+                cout << "KETIK 1 UNTUK LANJUT" << endl;
+                if(c = 1){
+                    goto ulang;
+                }else {
+                    cout << "ketik 1" << endl;
+                }
+            } else if(masuk == 2){
+                double suhusatu;
+                cout << "masukan suhu yang akan di konversi" << endl;
+                cin >> suhusatu;
+                Suhu konver = Suhu(suhusatu);
+                konver.konversi(suhusatu);
+                cout << "ketik satu  untuk lanjut" << endl;
+                int angka;
+                cin >> angka;
+                if (angka == 1){
+                    goto ulang;
+                }else{
+                    cout << "ketik 1" << endl;
+                }
+            }else if(masuk == 3){
+
+            }else if(masuk == 4){
+                user.informasi();
+                goto ulang;
+            }
+            
+            else{
+                cout << "ketik 1-4" << endl;
+                cout << "KETIK ANGKA UNTUK MENGULANG" << endl;
+                goto ulang;
+            }
+        }
+};
+class LayarDepan{
+    public:
+        int sandi;
+        int lanjutkan;
+        int setop = 10;
+        Menu depan ;
+        void Layar(){
+            
+            while(true){
+            cout << "selamat datang" << endl;
+            cout << "--------------" << endl;
+            cout << "nama harus tanpa spasi" << endl;
+            cout << "jika harus menggunakan spasi " << endl;
+            cout << "hasus diganti _ " << endl;
+            cout << "nama: ";
+            cin >> nama;
+            cout << "hai " << nama << " masukan ";
+            cout << "kata sandi : ";
+            cin >> sandi;
+            if (sandi == 140606){
+                
+                cout << "sandi benar" << endl;
+                cout << "ketik angka 1 dua  untuk melanjutkan" << endl;
+                cout << "dan ketik angka selain 1 untuk keluar" << endl;
+                cin >> lanjutkan;
+                if(lanjutkan == 1){
+                    depan.menu();
+                    
+                }else{
+                    break;
+                }
+
+            } else{
+                cout <<"kata sandi salah" << endl << endl;
+                cout <<"kata sandi: 140606" << endl;
+            }}
+        }
+};
+int main(int argc, char const *argv[])
+{
+    
+    
+    cout << "program ini di buka pada : " << waktu << endl;
+    system("color 09");
+    LayarDepan data1;
+    data1.Layar();
+
+    return 0;
+}
